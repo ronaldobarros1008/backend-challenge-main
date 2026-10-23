@@ -5,20 +5,20 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 import { Module } from '@nestjs/common';
-import { createObserveModule } from '@nestjs/observe';
+import { ConfigModule } from '@nestjs/config';
+import { MikroOrmModule } from '@mikro-orm/nestjs';
+import mikroOrmConfig from './shared/database/mikro-orm.config.js';
 import { AppController } from './app.controller.js';
 import { AppService } from './app.service.js';
-export const { ObserveModule, ObserveInstrument } = createObserveModule();
 let AppModule = class AppModule {
 };
 AppModule = __decorate([
     Module({
         imports: [
-            ObserveModule.forRoot({
-                appKey: process.env.OBSERVE_APP_KEY ?? 'YOUR_APP_KEY',
-                appSecret: process.env.OBSERVE_APP_SECRET ?? 'YOUR_APP_SECRET',
-                serviceId: 'backend-challenge-main',
+            ConfigModule.forRoot({
+                isGlobal: true,
             }),
+            MikroOrmModule.forRoot(mikroOrmConfig),
         ],
         controllers: [AppController],
         providers: [AppService],
