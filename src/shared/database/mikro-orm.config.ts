@@ -20,6 +20,10 @@ const config = defineConfig({
     entities: ['dist/**/*.entity.js'],
     entitiesTs: ['src/**/*.entity.ts'],
 
+    discovery: {
+        warnWhenNoEntities: false,
+    },
+
     debug: process.env.DATABASE_DEBUG === 'true',
 
     extensions: [Migrator],
