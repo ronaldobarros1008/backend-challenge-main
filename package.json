@@ -13,7 +13,7 @@
     "start": "nest start",
     "start:dev": "nest start --watch",
     "start:debug": "nest start --debug --watch",
-    "start:prod": "node dist/main",
+    "start:prod": "bun dist/main",
     "lint": "oxlint --type-aware src/ test/",
     "orm": "mikro-orm",
     "migration:create": "mikro-orm migration:create",
@@ -21,11 +21,8 @@
     "migration:down": "mikro-orm migration:down",
     "migration:list": "mikro-orm migration:list",
     "migration:pending": "mikro-orm migration:pending",
-    "test": "vitest run",
-    "test:watch": "vitest",
-    "test:cov": "vitest run --coverage",
-    "test:debug": "vitest --inspect-brk --no-file-parallelism",
-    "test:e2e": "vitest run --config ./vitest.config.e2e.ts"
+    "test": "bun test",
+    "test:watch": "bun test --watch"
   },
   "mikro-orm": {
     "preferTs": true,
@@ -48,6 +45,7 @@
     "@nestjs/platform-express": "^12.0.1",
     "class-transformer": "^0.5.1",
     "class-validator": "^0.15.1",
+    "decimal.js": "^10.6.0",
     "dotenv": "^18.0.9",
     "pg": "^8.23.1",
     "reflect-metadata": "^0.2.2",
@@ -60,6 +58,7 @@
     "@nestjs/schematics": "^12.0.0",
     "@nestjs/testing": "^12.0.1",
     "@oxc-node/core": "^1.0.0",
+    "@types/bun": "^1.4.4",
     "@types/express": "^5.0.0",
     "@types/node": "^24.0.0",
     "@types/supertest": "^7.0.0",
