@@ -51,12 +51,14 @@ export class WalletLedgerEntryEntity {
 
     @Property({
         fieldName: 'amount',
+        type: 'string',
         columnType: 'numeric(19, 2)',
     })
     amount!: string;
 
     @Property({
         fieldName: 'currency',
+        type: 'string',
         columnType: 'char(3)',
         length: 3,
     })
@@ -64,18 +66,21 @@ export class WalletLedgerEntryEntity {
 
     @Property({
         fieldName: 'balance_before',
+        type: 'string',
         columnType: 'numeric(19, 2)',
     })
     balanceBefore!: string;
 
     @Property({
         fieldName: 'balance_after',
+        type: 'string',
         columnType: 'numeric(19, 2)',
     })
     balanceAfter!: string;
 
     @Property({
         fieldName: 'created_at',
+        type: Date,
         columnType: 'timestamptz',
     })
     createdAt!: Date;

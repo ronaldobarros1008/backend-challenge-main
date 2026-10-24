@@ -53,6 +53,7 @@ export class WagerTransactionEntity {
 
     @Property({
         fieldName: 'provider_id',
+        type: 'string',
         columnType: 'varchar(100)',
         length: 100,
     })
@@ -60,6 +61,7 @@ export class WagerTransactionEntity {
 
     @Property({
         fieldName: 'external_transaction_id',
+        type: 'string',
         columnType: 'varchar(255)',
         length: 255,
     })
@@ -67,6 +69,7 @@ export class WagerTransactionEntity {
 
     @Property({
         fieldName: 'idempotency_key',
+        type: 'string',
         columnType: 'varchar(255)',
         length: 255,
     })
@@ -74,6 +77,7 @@ export class WagerTransactionEntity {
 
     @Property({
         fieldName: 'payload_hash',
+        type: 'string',
         columnType: 'char(64)',
         length: 64,
     })
@@ -93,6 +97,7 @@ export class WagerTransactionEntity {
 
     @Property({
         fieldName: 'round_id',
+        type: 'string',
         columnType: 'varchar(255)',
         length: 255,
     })
@@ -100,6 +105,7 @@ export class WagerTransactionEntity {
 
     @Property({
         fieldName: 'game_id',
+        type: 'string',
         columnType: 'varchar(255)',
         length: 255,
     })
@@ -114,12 +120,14 @@ export class WagerTransactionEntity {
 
     @Property({
         fieldName: 'amount',
+        type: 'string',
         columnType: 'numeric(19, 2)',
     })
     amount!: string;
 
     @Property({
         fieldName: 'currency',
+        type: 'string',
         columnType: 'char(3)',
         length: 3,
     })
@@ -127,6 +135,7 @@ export class WagerTransactionEntity {
 
     @Property({
         fieldName: 'reference_external_transaction_id',
+        type: 'string',
         columnType: 'varchar(255)',
         length: 255,
         nullable: true,
@@ -157,6 +166,7 @@ export class WagerTransactionEntity {
 
     @Property({
         fieldName: 'balance_after',
+        type: 'string',
         columnType: 'numeric(19, 2)',
         nullable: true,
     })
@@ -164,12 +174,14 @@ export class WagerTransactionEntity {
 
     @Property({
         fieldName: 'created_at',
+        type: Date,
         columnType: 'timestamptz',
     })
     createdAt!: Date;
 
     @Property({
         fieldName: 'processed_at',
+        type: Date,
         columnType: 'timestamptz',
         nullable: true,
     })
@@ -177,6 +189,7 @@ export class WagerTransactionEntity {
 
     @Property({
         fieldName: 'reference_attempts',
+        type: 'number',
         columnType: 'integer',
         default: 0,
     })
@@ -184,6 +197,7 @@ export class WagerTransactionEntity {
 
     @Property({
         fieldName: 'next_reference_attempt_at',
+        type: Date,
         columnType: 'timestamptz',
         nullable: true,
     })

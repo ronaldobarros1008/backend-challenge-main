@@ -26,6 +26,7 @@ export class WalletEntity {
 
     @Property({
         fieldName: 'currency',
+        type: 'string',
         columnType: 'char(3)',
         length: 3,
     })
@@ -33,24 +34,28 @@ export class WalletEntity {
 
     @Property({
         fieldName: 'balance_amount',
+        type: 'string',
         columnType: 'numeric(19, 2)',
     })
     balanceAmount!: string;
 
     @Property({
         fieldName: 'version',
+        type: 'number',
         columnType: 'integer',
     })
     version!: number;
 
     @Property({
         fieldName: 'created_at',
+        type: Date,
         columnType: 'timestamptz',
     })
     createdAt!: Date;
 
     @Property({
         fieldName: 'updated_at',
+        type: Date,
         columnType: 'timestamptz',
     })
     updatedAt!: Date;
